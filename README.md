@@ -1,5 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This a classic (but not very simple) TODO app, you can add and remove lists and within the lists you can add and remove items. You can also check your progress by checking/unchecking particular items.
+
+
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:

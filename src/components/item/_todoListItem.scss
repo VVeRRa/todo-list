@@ -1,0 +1,64 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/variables";
+
+.to-do-list-item_container {
+  @include flex-center-mx();
+  text-decoration: none;
+  width: fit-content;
+  position: relative;
+  border-bottom: 1px solid transparent;
+  margin: 0.3rem 0 0 0;
+
+  @media (min-width: $md) {
+    max-width: 600px;
+  }
+
+  &:hover {
+    border-bottom: 1px solid $semiYellow;
+  }
+
+  .to-do-list-item_bin {
+    min-width: 1.5rem;
+    max-width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    @include hoverIcon();
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    h4 {
+      color: $yellow;
+      width: 75vw;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 0.5rem 0;
+
+      @media (min-width: $md) {
+        max-width: 546px;
+      }
+
+      &:hover {
+        color: $semiYellow;
+      }
+    }
+
+    .to-do-list-item_arrow {
+      min-width: 1rem;
+      max-width: 1rem;
+      height: 1rem;
+      margin: 0 0.5rem;
+
+      @include hoverIcon();
+    }
+  }
+}

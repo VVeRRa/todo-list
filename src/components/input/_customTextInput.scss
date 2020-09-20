@@ -1,0 +1,39 @@
+@import "../../assets/styles/mixins";
+
+.custom-text-input_container {
+  @include flex-center-mx();
+  position: relative;
+
+  input {
+    font-size: 1rem;
+    height: 2rem;
+    width: 100%;
+    outline: 0;
+    border: none;
+    font-family: $Courier;
+    border-bottom: 2px solid $yellow;
+    background-color: $semiBlack;
+    color: $yellow;
+    position: relative;
+    padding-right: 2rem;
+
+    &::placeholder {
+      color: rgba($yellow, 0.5);
+    }
+    &:focus {
+      border-bottom: 2px solid $semiYellow;
+    }
+  }
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    right: 0;
+    position: absolute;
+  }
+}
+
+.custom-text-input_error-message {
+  margin: 0;
+  color: $lightRed;
+}

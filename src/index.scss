@@ -1,0 +1,19 @@
+@import "./assets/styles/_variables.scss";
+
+body {
+  font-family: $Courier;
+  background-color: $semiBlack;
+  color: $yellow;
+  margin: 0;
+
+  h4 {
+    font-size: 1.3rem;
+    font-family: $Courier;
+    font-weight: normal;
+  }
+
+  h5 {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+}

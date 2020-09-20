@@ -1,0 +1,18 @@
+@import "../../assets/styles/mixins";
+.header-content_container {
+  @include flex-center-mx();
+  padding: 1rem;
+
+  svg {
+    width: 1.3rem;
+    height: 1.3rem;
+
+    @include hoverIcon();
+  }
+
+  h4 {
+    margin: 0.5rem 0;
+    text-align: center;
+    flex: 1;
+  }
+}

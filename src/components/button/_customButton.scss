@@ -1,0 +1,23 @@
+@import "../../assets/styles/variables";
+
+.custom-button_container {
+  background-color: $yellow;
+  border: none;
+  color: $semiBlack;
+  border-radius: 3px;
+  font-family: $Courier;
+  margin: 1.5rem;
+  padding: 0.5rem;
+  width: 50%;
+  align-self: center;
+  position: relative;
+
+  &:focus {
+    outline: none;
+    box-shadow:  0 0 0 3px $yellow;
+  }
+  &:hover {
+    background-color: $semiYellow;
+    border: 0;
+  }
+}

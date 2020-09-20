@@ -1,0 +1,9 @@
+@import "../../assets/styles/_variables.scss";
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: $black;
+  color: $yellow;
+  z-index: 10;
+}
