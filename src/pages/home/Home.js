@@ -10,6 +10,7 @@ import "./_home.scss";
 
 const Home = () => {
   const {
+    showErrorMessageInHome,
     toDoListStored,
     handleListItemInputChange,
     handleCreateList,
@@ -32,6 +33,7 @@ const Home = () => {
           value={listItemInputValue}
           onDeleteClick={handleDeleteListInput}
           onkeydown={handleKeyDown}
+          showErrorMessage={showErrorMessageInHome}
         />
         <CustomButton onClick={handleCreateList}>Create</CustomButton>
       </div>

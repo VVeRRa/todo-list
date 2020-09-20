@@ -9,7 +9,8 @@ export const ToDoContext = createContext(undefined);
 export const ToDoProvider = ({ children }) => {
   const [listItemInputValue, setListItemInputValue] = useState("");
   const [itemInputValue, setItemInputValue] = useState("");
-  const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const [showErrorMessageInHome, setShowErrorMessageInHome] = useState(false);
+  const [showErrorMessageInList, setShowErrorMessageInList] = useState(false);
   const [toDoListStored, setToDoListStored] = useLocalStorageState(
     "toDoListStored",
     []
@@ -17,7 +18,7 @@ export const ToDoProvider = ({ children }) => {
 
   const handleCreateList = () => {
     if (!listItemInputValue) {
-      setShowErrorMessage(true);
+      setShowErrorMessageInHome(true);
       return;
     }
     const updatedList = [
@@ -26,11 +27,15 @@ export const ToDoProvider = ({ children }) => {
     ];
     setToDoListStored(updatedList);
     setListItemInputValue("");
-    setShowErrorMessage(false);
+    setShowErrorMessageInHome(false);
   };
 
   // I was helped with this function
   const handleCreateItem = (id) => {
+    if (!itemInputValue) {
+      setShowErrorMessageInList(true);
+      return;
+    }
     const correctList = findCorrectListItemById(id);
     correctList.items.push({
       value: itemInputValue,
@@ -39,6 +44,8 @@ export const ToDoProvider = ({ children }) => {
     });
     setToDoListStored(toDoListStored);
     setItemInputValue("");
+    setShowErrorMessageInList(false);
+
   };
 
   const handleListItemInputChange = (event) =>
@@ -82,7 +89,8 @@ export const ToDoProvider = ({ children }) => {
     listItemInputValue,
     itemInputValue,
     toDoListStored,
-    showErrorMessage,
+    showErrorMessageInHome,
+    showErrorMessageInList,
     handleCreateList,
     handleCreateItem,
     handleDeleteListInput,

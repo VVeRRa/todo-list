@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import { ReactComponent as DeleteBtn } from "../../assets/svg/delete.svg";
-import { ToDoContext } from "../../libs/ToDoContext";
 
 import "./_customTextInput.scss";
 
@@ -11,9 +10,8 @@ const CustomTextInput = ({
   placeholder,
   onDeleteClick,
   onkeydown,
+  showErrorMessage,
 }) => {
-  const { showErrorMessage } = useContext(ToDoContext);
-
   return (
     <>
       <div className="custom-text-input_container">

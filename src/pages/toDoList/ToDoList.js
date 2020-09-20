@@ -12,6 +12,7 @@ import "./_toDoList.scss";
 const ToDoList = () => {
   const {
     itemInputValue,
+    showErrorMessageInList,
     handleDeleteItemInput,
     handleCreateItem,
     handleDeleteItem,
@@ -50,6 +51,7 @@ const ToDoList = () => {
           onDeleteClick={handleDeleteItemInput}
           value={itemInputValue}
           onkeydown={handleKeyDown}
+          showErrorMessage={showErrorMessageInList}
         />
         <CustomButton onClick={handleCreate} className={"createToDoList"}>
           Create
